@@ -2,7 +2,7 @@ import { Card } from "antd";
 
 const ContentCard = (props) => {
   const { data } = props;
-  console.log(data);
+  //console.log(data);
   return (
     <>
       <Card

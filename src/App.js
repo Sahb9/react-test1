@@ -66,6 +66,13 @@ function App() {
     );
   };
   //console.log(getDataByTech(data, "css"));
+
+  function handleSearch(dataSearch) {
+    let arr = value.find((item) => item.name === dataSearch);
+    console.log(arr);
+
+    setValue([arr]);
+  }
   return (
     <div className="m-6">
       <div
@@ -79,12 +86,12 @@ function App() {
         className="flex  justify-around items-center"
         style={{ marginBottom: "30px" }}
       >
-        <ContentSearch />
+        <ContentSearch onHandleSearch={handleSearch} />
         <ContentSelect onHandleData={handleData} />
       </div>
       <div className="grid grid-cols-3 gap-1">
         {value.map(function (item) {
-          console.log(item);
+          // console.log(item);
           return <ContentCard data={item}></ContentCard>;
         })}
       </div>
